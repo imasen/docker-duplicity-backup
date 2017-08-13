@@ -1,3 +1,5 @@
+#!/bin/sh -e
+
 export PASSPHRASE=$PASS
 export AWS_ACCESS_KEY_ID=$KEY_ID
 export AWS_SECRET_ACCESS_KEY=$ACCESS_KEY

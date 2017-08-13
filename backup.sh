@@ -12,9 +12,11 @@ echo "--- 	  starting backup		   ---"
 	duplicity $options $excludes $backupsrc $backupdest
 echo "--- 	    backup ended		   ---"
 
-echo "--- 	  removing old backups		   ---"
-	duplicity remove-older-than  --force $backupdest
-echo "--- 	    removing old backups ended     ---"
+if [ $REMOVE_OLD_BACKUP == yes ]; then
+	echo "--- 	  removing old backups		   ---"
+		duplicity remove-older-than $removeolderthan --force $backupdest
+	echo "--- 	  removing old backups ended       ---"
+fi
 
 export PASSPHRASE=
 export AWS_ACCESS_KEY_ID=

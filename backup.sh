@@ -14,7 +14,7 @@ echo "--- 	  starting backup		   ---"
 	duplicity $options $excludes $backupsrc $backupdest
 echo "--- 	    backup ended		   ---"
 
-if [ $REMOVE_OLD_BACKUP == yes ]; then
+if [ $REMOVE_OLD_BACKUP = "yes" ]; then
 	echo "--- 	  removing old backups		   ---"
 		duplicity remove-older-than $removeolderthan --force $backupdest
 	echo "--- 	  removing old backups ended       ---"
